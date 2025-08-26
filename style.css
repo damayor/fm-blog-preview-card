@@ -19,6 +19,7 @@
   --cl-white: #fff;
   --cl-gray-950: #111111;
   --cl-gray-500: #6b6b6b;
+  --cl-secondary: hsl(228, 45%, 44%);
 
   --sp-300: 24px;
   --sp-150: 12px;
@@ -30,6 +31,11 @@
   --font-figtree: "Figtree Medium", sans-serif;
 } */
 
+/** Starting with mobile-first **/
+html {
+  font-size: 14px;
+}
+
 .font-figtree {
   font-family: "Figtree", sans-serif;
   color: var(--cl-gray-950);
@@ -37,26 +43,26 @@
 
 .text-preset--1 {
   font-family: "Figtree", sans-serif;
-  font-size: 24px;
+  font-size: 1.5em;
   line-height: 150%;
   font-weight: 700;
 }
 
 .text-preset--2 {
   font-family: "Figtree", sans-serif;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 400;
 }
 
 .text-preset--3 {
   font-family: "Figtree", sans-serif;
-  font-size: 14px;
+  font-size: 0.875em;
   font-weight: 400;
 }
 
 .text-preset--3-bold {
   font-family: "Figtree", sans-serif;
-  font-size: 14px;
+  font-size: 0.875em;
   font-weight: 700;
 }
 
@@ -73,11 +79,11 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: var(--sp-300);
-  height: 67vh;
   box-shadow: black 8px 8px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 85vw;
 }
 
 .blog-card-content {
@@ -113,12 +119,12 @@ body {
 
 .blog-card-author__picture {
   flex: 0 0 32px;
-  margin-right: var(--sp-150);
 }
 
 .blog-card-author__fullname {
   flex: 1 0 auto;
   align-content: center;
+  margin-inline-start: var(--sp-150);
 }
 
 .attribution {
@@ -129,35 +135,15 @@ body {
   bottom: var(--sp-300);
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--cl-secondary);
 }
 
-@media (max-width: 420px) {
+@media (min-width: 26em) {
   html {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .blog-card__container {
-    width: 85vw;
-  }
-
-  .blog-card__image {
-    object-fit: cover;
-  }
-
-  .text-preset--1 {
-    font-size: 20px;
-  }
-
-  .text-preset--2 {
-    font-size: 14px;
-  }
-
-  .text-preset--3 {
-    font-size: 12px;
-  }
-
-  .text-preset--3-bold {
-    font-size: 12px;
+    width: max-content;
   }
 }
